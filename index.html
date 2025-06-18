@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Covini</title>
+
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="phone-frame">
+    <div class="status-bar">
+      <span class="time">12:45</span>
+      <div class="icons">
+        <span class="signal">📶</span>
+        <span class="wifi">📡</span>
+        <span class="battery">🔋</span>
+      </div>
+    </div>
+    
+    
+    <header>
+      <img src="assets/imag/logo3.png" alt="Logo de Covini" class="logo-header">
+    </header>
+
+    <main>
+      <div id="notification-container"></div>
+
+      <section id="login">
+        <h2>Iniciar Sesión</h2>
+        <input type="email" id="email" placeholder="Correo electrónico" />
+        <input type="password" id="password" placeholder="Contraseña" />
+        <button onclick="login()">Entrar</button>
+      </section>
+
+      <section id="busqueda" style="display:none;">
+        <h2>Buscar productos</h2>
+        <input type="text" id="buscar" placeholder="Buscar producto..." onkeyup="filtrarProductos()" />
+        <div id="resultados"></div>
+        <p id="no-resultados" style="display:none;">No se encontraron productos.</p>
+        <button onclick="mostrarCarrito()">🛒 Ver carrito</button>
+      </section>
+
+      <section id="carrito" style="display:none;">
+        <h2>Carrito de compras</h2>
+        <ul id="carrito-lista"></ul>
+        <p id="carrito-vacio" style="display:none;">El carrito está vacío.</p>
+        <p id="total"></p>
+        <button id="pagar-btn" onclick="procesarPago()">Pagar y Ganar Puntos</button>
+        <button onclick="volverABuscar()">🔙 Volver</button>
+      </section>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
